@@ -45,7 +45,7 @@ gcloud config unset container/use_client_certificate
 gcloud projects create ${GCP_PROJECT_ID} --set-as-default
 ```
 
-> __Note:__: `terraform` definitions cannot interpolate variables, so I'm not
+> __Note__: `terraform` definitions cannot interpolate variables, so I'm not
 > sure if this bucket name can ever be configurable? Maybe an overrides? :thinking:
 
 ```sh
