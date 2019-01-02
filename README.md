@@ -1,5 +1,7 @@
 # protokit
 
+[![Build Status](https://travis-ci.org/syntaqx/protokit.svg?branch=master)](https://travis-ci.org/syntaqx/protokit)
+
 > A prototype something or other...
 
 ## License

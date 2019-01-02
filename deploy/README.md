@@ -23,7 +23,7 @@ The following configurations are expected as environment variables:
 
 ## Getting started
 
-> This bit is mostly note format for the time being\
+> This bit is mostly note format for the time being
 
 ### Initial setup
 
@@ -45,8 +45,8 @@ gcloud config unset container/use_client_certificate
 gcloud projects create ${GCP_PROJECT_ID} --set-as-default
 ```
 
-> @NOTE: `terraform` definitions cannot interpolate variables, so I'm not sure
-> if this bucket name can ever be configurable? Maybe an overrides? :thinking:
+> __Note:__: `terraform` definitions cannot interpolate variables, so I'm not
+> sure if this bucket name can ever be configurable? Maybe an overrides? :thinking:
 
 ```sh
 gsutil mb -p ${GCP_PROJECT_ID} -c regional -l ${GCP_REGION} gs://protokit-tf-state
