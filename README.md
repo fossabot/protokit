@@ -1,6 +1,7 @@
 # protokit
 
 [![Build Status](https://travis-ci.org/syntaqx/protokit.svg?branch=master)](https://travis-ci.org/syntaqx/protokit)
+[![Go Report Card](https://goreportcard.com/badge/github.com/syntaqx/protokit)](https://goreportcard.com/report/github.com/syntaqx/protokit)
 
 > A prototype something or other...
 
