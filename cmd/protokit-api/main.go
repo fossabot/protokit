@@ -1,4 +1,4 @@
-// Package main implements the runtime for the protokit binary.
+// Package main implements the runtime for the protokit-api binary.
 package main
 
 import (
@@ -48,7 +48,7 @@ func main() {
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		_, _ = fmt.Fprint(w, `{"message": "Hello, World!"}`)
+		fmt.Fprint(w, `{"message": "Hello, World!"}`)
 	})
 
 	httpServer := &http.Server{

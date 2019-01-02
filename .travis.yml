@@ -1,0 +1,45 @@
+language: go
+
+go:
+  - 1.11.x
+  - tip
+
+git:
+  depth: 1
+  submodules: false
+
+services:
+  - docker
+
+env:
+  global:
+    - GO111MODULE=on
+
+before_install:
+  - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $GOPATH/bin latest
+  - golangci-lint --version
+
+install:
+  - go mod download
+
+script:
+  - go generate -x ./... && git diff --exit-code; code=$?; git checkout -- .; (exit $code)
+  - go mod tidy && git diff --exit-code; code=$?; git checkout -- .; (exit $code)
+  - go test -race -cover -coverprofile=coverage.txt -covermode=atomic ./...
+  - golangci-lint run
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+cache:
+  directories:
+    - $HOME/.cache/go-build
+    - $HOME/gopath/pkg/mod
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - go: tip
+
+notifications:
+  email: false
